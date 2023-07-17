@@ -1,1 +1,1 @@
-# learning-ts-pz
+# Learning 'Strongly_Type' language, called 'TypeScript'
