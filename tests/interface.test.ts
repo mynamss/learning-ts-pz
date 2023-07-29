@@ -1,3 +1,4 @@
+import { Employee, Manager } from "../src/extend-interface"
 import { President, sumNum } from "../src/interface"
 
 describe("Interface in TS", () => {
@@ -47,6 +48,41 @@ describe("Interface in TS", () => {
     expect(book.name).toBe("Menjadi Programmer")
     expect(book.writter).toBe("Solehudin")
   })
-})
 
-// Lanjut 01:45:26
+  // EXTEND INTERFACE
+  it("should support Extend Interface", () => {
+    const employee: Employee = {
+      id: 124,
+      name: "Meta",
+      division: "IT",
+      active: true,
+    }
+
+    const manager: Manager = {
+      id: 222,
+      name: "Udin",
+      division: "PM",
+      active: true,
+      numberOfEmployee: 10,
+    }
+
+    console.info(employee)
+    console.info(manager)
+  })
+
+  it("should support Function in Interface", () => {
+    interface Person {
+      name: string
+      greetings(name: string): string
+    }
+
+    const person: Person = {
+      name: "Ali",
+      greetings: function (name: string): string {
+        return `Hello ${name}, my name is ${this.name}`
+      },
+    }
+
+    console.info(person.greetings("Slamet"))
+  })
+})
